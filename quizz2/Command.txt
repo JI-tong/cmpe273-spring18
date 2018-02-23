@@ -1,8 +1,6 @@
 
 
-pip3 install virtualenv\
-
--p python3 my-venv\
+pip3 install virtualenv -p python3 my-venv
 
 if to delete (rm -rf my-venv/)
 
