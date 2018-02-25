@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask import Response
 app = Flask(__name__)
 
 @app.route("/")
@@ -16,7 +17,9 @@ def user():
 
     name = request.form["name"]
     map[user_id] = name
-    return "POST, id = {}, name = {}\n".format(user_id, name)
+    #return "POST, id = {}, name = {}\n".format(user_id, name)
+    #print "POST, id = {}, name = {}\n".format(user_id, name)
+    return Response("POST, id = {}, name = {}\n".format(user_id, name), status = 201)
 
 @app.route('/users/<user_id>', methods = ['GET','DELETE'])
 def getname(user_id):
@@ -25,4 +28,4 @@ def getname(user_id):
         return "GET, id = {}, name = {}\n".format(user_id, map[user_id])
     else:
         map[user_id] = ''
-        return "No Content"
+        return Response(status = 204)
