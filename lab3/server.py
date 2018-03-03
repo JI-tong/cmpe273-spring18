@@ -13,7 +13,7 @@ display.bind("tcp://127.0.0.1:5677")
 
 def get_message(sock):
     data = sock.recv_json()
-    sock.send_string("received")
+    sock.send(b'\x00')
     username = data['username']
     message = data['message']
     return username,message
