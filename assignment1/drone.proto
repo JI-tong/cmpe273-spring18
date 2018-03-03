@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message Request{
+    int32 id = 1;
+}
+message Regist{
+
+}
+
+message Dancer{
+    int32 x = 2;
+    int32 y = 3;
+    int32 z = 4;
+}
+message RegistResult{
+    int32 id = 1;
+}
+message StartDancerResult{
+    Dancer dancer = 1;
+}
+message PeerDancerResult{
+    Dancer dancer = 1;
+}
+
+service Coordinate{
+    //rpc setup(Request) returns (StartDancerResult){}
+    //rpc initial(Request) returns (stream StartDancerResult){}
+    rpc setup(Regist) returns (RegistResult){}
+    rpc get(Request) returns (stream PeerDancerResult){}
+    //rpc get(Request) returns(Dancer){}
+
+}
