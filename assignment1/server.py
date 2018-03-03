@@ -1,3 +1,8 @@
+# first run the proto:
+# python3 -m grpc.tools.protoc -I. --python_out=. --grpc_python_out=. drone.proto
+# then run: python3 server.py
+
+
 import time
 import grpc
 import drone_pb2
