@@ -2,7 +2,7 @@ from __future__ import print_function
 import grpc
 import drone_pb2_grpc
 import sys
-from drone_pb2 import Request#, StartDancerResult,PeerDancerResult
+from drone_pb2 import Request, Regist#, StartDancerResult,PeerDancerResult
 
 class CoClient():
     def __init__(self, host = '0.0.0.0', port = 3000):
@@ -17,7 +17,7 @@ class CoClient():
         return
 
     def setup(self):
-        return self.stub.setup(Request())
+        return self.stub.setup(Regist())
 
 
 def test():
