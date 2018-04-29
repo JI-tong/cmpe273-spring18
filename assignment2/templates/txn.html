@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <table border = 1>
+         <thead>
+            <td>status</td>
+            <td>from_wallet</td>
+            <td>to_wallet</td>
+            <td>amount</td>
+            <td>time_stamp</td>
+            <td>txn_hash</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["status"]}}</td>
+               <td>{{row["from_wallet"]}}</td>
+               <td> {{row["to_wallet"]}}</td>
+               <td>{{row["amount"]}}</td>
+               <td>{{row["time_stamp"]}}</td>
+               <td>{{row["txn_hash"]}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+      
+   </body>
+</html>
